@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:cursive;
+}
+h1{
+  text-align: center;
+  margin-bottom:20px;
+}
+.input-add-note{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    justify-content:center;
+}
+.note-area{
+    border:2px solid black;
+    border-radius:8px;
+    width:500px;
+    height:80px;
+    display:flex;
+    flex-direction:row;
+    gap:12px;
+    background-color:crimson;
+    position:relative;
+    align-items:center;
+    margin-left:500px;
+    margin-top:50px;
+}
+.edit-btn, .delete-btn {
+padding:12px;
+z-index:1;
+  position: absolute;
+    right: 50px;
+     border-radius:18px;
+}
+.edit-btn{
+    position: absolute;
+    right: 150px;
+     border-radius:18px;
+}
+.added-text{
+    margin-left:4px;
+    color:white;
+}
