@@ -1,6 +1,7 @@
 const typeInput = document.querySelector(".input");
 const addButton = document.querySelector(".add-note");
 const mainContainer = document.querySelector(".container");
+const warningMessage = document.querySelector(".warning");
 
 let notes = JSON.parse(localStorage.getItem("notes")) || [];
 
@@ -12,7 +13,7 @@ function renderNotes() {
   mainContainer.innerHTML = "";
 
   notes.forEach((note, index) => {
-
+  
     const noteCard = document.createElement("div");
     noteCard.classList.add("note-area");
 
@@ -40,3 +41,24 @@ function renderNotes() {
     mainContainer.appendChild(noteCard);
   });
 }
+
+
+
+//save to LocalStorage and update the display
+function saveAndRender() {
+  localStorage.setItem("notes", JSON.stringify(notes));
+  renderNotes();
+}
+
+addButton.addEventListener("click", () => {
+  const textValue = typeInput.value.trim();
+  
+  if (textValue === "") warningMessage.textContent = "Your input is empty";
+
+
+  notes.push({ text: textValue });
+
+  saveAndRender();
+  typeInput.value = "";
+});
+renderNotes();
