@@ -4,15 +4,48 @@
     box-sizing:border-box;
     font-family:cursive;
 }
+body{
+    margin: 0;
+    min-height: 100vh;
+       background:
+        radial-gradient(circle at top left, rgba(0, 140, 255, 0.25), transparent 35%),
+        radial-gradient(circle at top right, rgba(140, 0, 255, 0.25), transparent 40%),
+        radial-gradient(circle at bottom, rgba(0, 255, 255, 0.08), transparent 45%),
+        linear-gradient(180deg, #0b0b14, #050509);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 h1{
   text-align: center;
   margin-bottom:20px;
+  color:whitesmoke;
+  margin-right:44px;
+  text-decoration:underline;
 }
 .input-add-note{
     display:flex;
     gap:12px;
     align-items:center;
     justify-content:center;
+}
+.input{
+    padding:13px;
+    border-radius:8px;
+    background-color:rgb(227, 136, 148);
+    color:rgb(240, 238, 232);
+    font-weight:bolder;
+}
+input::placeholder{
+    color:rgb(46, 25, 232);
+}
+.add-note{
+     padding:13px;
+    border-radius:8px;
+}
+.add-note:hover{
+    background-color:rgb(226, 16, 79);
+    transition:0.5s ease;
 }
 .note-area{
     border:2px solid black;
@@ -27,6 +60,19 @@ h1{
     align-items:center;
     margin-left:500px;
     margin-top:50px;
+     animation: slideDown 0.7s ease;
+    box-shadow: 0px 4px 10px rgba(223, 5, 5, 0.9);
+}
+@keyframes slideDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 .edit-btn, .delete-btn {
 padding:12px;
@@ -43,4 +89,16 @@ z-index:1;
 .added-text{
     margin-left:4px;
     color:white;
+}
+.warning{
+    display:flex;
+    justify-content:center;
+    margin-top:14px;
+    margin-right:28px;
+    color:white;
+}
+.empty{
+    background-color:aqua;
+   width:500px;
+    height:80px;
 }
