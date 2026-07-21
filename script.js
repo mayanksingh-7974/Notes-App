@@ -50,15 +50,24 @@ function saveAndRender() {
   renderNotes();
 }
 
+
+
 addButton.addEventListener("click", () => {
   const textValue = typeInput.value.trim();
   
-  if (textValue === "") warningMessage.textContent = "Your input is empty";
+  if (textValue === ""){
+     warningMessage.textContent = "Your input is empty";
+return;
+  }
+  else if(textValue !== ""){
+    warningMessage.textContent = " "; 
+  }
 
 
   notes.push({ text: textValue });
 
   saveAndRender();
   typeInput.value = "";
+  
 });
 renderNotes();
